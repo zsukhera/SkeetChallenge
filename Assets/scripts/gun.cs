@@ -4,7 +4,7 @@ using System.Collections;
 
 public class gun : MonoBehaviour
 {
-    public GameObject audioManager;
+    private GameObject audioManager;
     private StarterAssetsInputs input;
     private bool wasFirePressed;
     private  recoil recoilscript;
@@ -21,6 +21,9 @@ public class gun : MonoBehaviour
         if (!muzzleflash)
             Debug.Log("Did not find muzzleflash");
         muzzleflash.SetActive(false);
+
+        //audio manager
+        audioManager = GameObject.FindWithTag("audioMan");
     }
 
     void HandleFireInput()
@@ -37,10 +40,10 @@ public class gun : MonoBehaviour
     {
         Debug.Log("Muzzle flash on");
         muzzleflash.SetActive(true);
+        audioManager.GetComponent<audioScript>().playFireSound();
         yield return new WaitForSeconds(0.05f);
         muzzleflash.SetActive(false);
         Debug.Log("Muzzle flash off");
-
     }
 
     void Update()

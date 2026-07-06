@@ -15,12 +15,17 @@ public class audioScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void playFireSound()
+    {
+        audiosource.PlayOneShot(fireSound);
     }
 }

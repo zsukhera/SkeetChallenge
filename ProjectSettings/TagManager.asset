@@ -9,6 +9,7 @@ TagManager:
   - gun
   - muzzleFlash
   - audioMan
+  - pigeon
   layers:
   - Default
   - TransparentFX
