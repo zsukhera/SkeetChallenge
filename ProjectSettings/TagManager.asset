@@ -10,6 +10,7 @@ TagManager:
   - muzzleFlash
   - audioMan
   - pigeon
+  - ground
   layers:
   - Default
   - TransparentFX
